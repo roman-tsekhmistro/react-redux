@@ -1,6 +1,6 @@
 import React from 'react';
 import './login-page.scss';
-import LoginForm from '../../components/form/form';
+import LoginForm from '../../components/form';
 
 const LoginPage = () => {
   return (
