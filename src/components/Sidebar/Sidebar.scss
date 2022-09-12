@@ -1,0 +1,76 @@
+.sidebar {
+  height: 100vh;
+  width: 20vw;
+  background-color: #F8F8F8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  text-decoration: none;
+  font-size: 42px;
+  color: royalblue;
+  box-shadow: 0 0 17px -5px rgba(0, 0, 0, 0.75);
+  font-family: 'Anton', sans-serif;
+
+  .logo{
+    padding: 0 15px;
+    height: fit-content;
+    width: 100%;
+    transition: transform .35s ease-out;
+
+    &:hover{
+      cursor: pointer;
+      transform: scale(.9);
+    }
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+
+
+    > * {
+      padding: 5px 35px;
+      text-decoration: none;
+      font-family: 'Anton', sans-serif;
+      font-size: 42px;
+      color: royalblue;
+      box-shadow: 0 0 17px -5px rgba(0, 0, 0, 0.75);
+      //border: 4px solid darkgray;
+      border-right: none;
+      border-left: none;
+      text-transform: uppercase;
+      height: fit-content;
+      margin-bottom: 20px;
+      width: 100%;
+      transition: all .3s ease-out;
+
+      &:hover{
+        cursor: pointer;
+        background-color: royalblue;
+        color: #fff;
+      }
+    }
+  }
+
+  button{
+    margin: 0 auto;
+    padding: 10px 70px;
+    font-size: 36px;
+    width: fit-content;
+    border-radius: 40px;
+    background-color: royalblue;
+    color: #ffff;
+    border: none;
+    box-shadow: 0 0 17px -5px rgba(0, 0, 0, 0.75);
+    transition: background-color .3s ease-out;
+
+    &:hover{
+      background-color: #ffffff;
+      color: royalblue;
+      cursor: pointer;
+    }
+  }
+}
+
+

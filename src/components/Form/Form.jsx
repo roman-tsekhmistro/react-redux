@@ -1,8 +1,24 @@
 import React from 'react';
-import './form.scss';
+import './Form.scss';
 import {ErrorMessage, Field, Form, Formik} from 'formik';
+import {useNavigate} from 'react-router-dom';
 
 function LoginForm() {
+
+  const navigation = useNavigate();
+
+  const handleSubmit = () => {
+    const setLocalStorage = window.localStorage;
+    setLocalStorage.setItem('TOKEN', 'Hjak1jasi8');
+
+    let TOKEN = localStorage.getItem('TOKEN');
+    if (!TOKEN) {
+      navigation('/login');
+    } else {
+      navigation('/');
+    }
+  };
+
   return (
       <Formik
           initialValues={{email: '', password: '', toggle: false}}
@@ -17,12 +33,7 @@ function LoginForm() {
             }
             return errors;
           }}
-          onSubmit={(values, {setSubmitting}) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
-          }}
+          onSubmit={handleSubmit}
       >
         {({isSubmitting}) => (
             <Form className="form__wrapper">
