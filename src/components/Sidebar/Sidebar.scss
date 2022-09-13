@@ -1,7 +1,7 @@
 .sidebar {
   height: 100vh;
-  width: 20vw;
-  background-color: #F8F8F8;
+  width: 306px;
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -9,64 +9,60 @@
   text-decoration: none;
   font-size: 42px;
   color: royalblue;
-  box-shadow: 0 0 17px -5px rgba(0, 0, 0, 0.75);
-  font-family: 'Anton', sans-serif;
+  font-family: 'Poppins', sans-serif;
 
-  .logo{
-    padding: 0 15px;
-    height: fit-content;
+  .logo {
+    height: 39px;
     width: 100%;
     transition: transform .35s ease-out;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
-      transform: scale(.9);
+      transform: scale(1.25);
     }
   }
 
   .navigation {
     display: flex;
     flex-direction: column;
-
+    padding: 0 28px;
 
     > * {
+      display: flex;
+      align-items: center;
       padding: 5px 35px;
       text-decoration: none;
-      font-family: 'Anton', sans-serif;
-      font-size: 42px;
-      color: royalblue;
-      box-shadow: 0 0 17px -5px rgba(0, 0, 0, 0.75);
-      //border: 4px solid darkgray;
-      border-right: none;
-      border-left: none;
-      text-transform: uppercase;
-      height: fit-content;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: -0.01em;
+      color: #9197B3;
       margin-bottom: 20px;
       width: 100%;
+      height: 46px;
+      border-radius: 8px;
       transition: all .3s ease-out;
 
-      &:hover{
+      &:hover {
         cursor: pointer;
-        background-color: royalblue;
-        color: #fff;
+        color: royalblue;
       }
     }
   }
 
-  button{
+  button {
     margin: 0 auto;
     padding: 10px 70px;
-    font-size: 36px;
+    font-size:16px;
     width: fit-content;
     border-radius: 40px;
-    background-color: royalblue;
+    background-color: #5932EA;
     color: #ffff;
     border: none;
-    box-shadow: 0 0 17px -5px rgba(0, 0, 0, 0.75);
     transition: background-color .3s ease-out;
 
-    &:hover{
-      background-color: #ffffff;
+    &:hover {
+      background-color: #FAFBFF;
       color: royalblue;
       cursor: pointer;
     }

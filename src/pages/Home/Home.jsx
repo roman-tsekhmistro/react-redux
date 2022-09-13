@@ -1,7 +1,11 @@
+import styles from './Home.module.scss';
+import StatisticTable from '../../components/StatisticTable/StatisticTable';
+
 export default function Home() {
-  return (
-      <div>
-        <h1>Home</h1>
-      </div>
-  );
+	return (
+		<main className={styles.container}>
+			<h1>Hello, dear User 👋🏼,</h1>
+			<StatisticTable />
+		</main>
+	);
 }
