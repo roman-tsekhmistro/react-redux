@@ -1,14 +1,14 @@
 import styles from './StatisticTable.module.scss';
 import StatisticTableElement from './StatisticTableElement';
 import TotalIcon from '../../assets/images/StatisticTable/icons/total-icon.svg';
-import CellDescription from './CellDescription';
+import CellDescription from './StatisticTableElement/CellDescription';
 import ArrowUp from '../../assets/images/StatisticTable/arrows/arrow-up.svg';
 import MembersIcon from '../../assets/images/StatisticTable/icons/members-icon.svg';
 import ArrowDown from '../../assets/images/StatisticTable/arrows/arrow-down.svg';
 import ActiveIcon from '../../assets/images/StatisticTable/icons/active-icon.svg';
+import RecentUsers from './StatisticTableElement/RecentUsers';
 
 export default function StatisticTable() {
-	console.log(styles);
 	return (
 		<section className={styles.statistic}>
 			<StatisticTableElement
@@ -41,8 +41,8 @@ export default function StatisticTable() {
 				icon={ActiveIcon}
 				heading='Active Now'
 				number='189'
-				className='last--block'
 				hasBorder={false}
+				description={<RecentUsers />}
 			/>
 		</section>
 	);

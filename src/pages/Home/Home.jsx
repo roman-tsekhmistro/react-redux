@@ -1,5 +1,5 @@
 import styles from './Home.module.scss';
-import StatisticTable from '../../components/StatisticTable/StatisticTable';
+import StatisticTable from '../../components/StatisticTable';
 
 export default function Home() {
 	return (
