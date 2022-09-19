@@ -1,25 +1,33 @@
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
-import './Sidebar.scss';
+import styles from './Sidebar.module.scss';
+import { useDispatch } from 'react-redux';
+import { logOut } from '../../redux/actions/actions';
 
 export default function Sidebar() {
-  const navigate = useNavigate();
+	const navigation = useNavigate();
+	const dispatch = useDispatch();
 
-  function onLogOut() {
-    localStorage.removeItem('TOKEN');
-    navigate('/login');
-  }
+	const handleClick = () => {
+		dispatch(logOut());
+		navigation('/login');
+	};
+	return (
+		<aside className={styles.sidebar}>
+			<Link to='/'>
+				<img
+					className={styles.logo}
+					src={logo}
+					alt='Logo'
+				/>
+			</Link>
+			<nav className={styles.navigation}>
+				<Link to='/'>Home</Link>
+				<Link to='/dashboard'>Dashboard</Link>
+				<Link to='/users'>Users</Link>
+			</nav>
 
-  return (
-      <aside className="sidebar">
-        <Link to="/"><img className="logo" src={logo} alt="Logo"/></Link>
-        <nav className="navigation">
-          <Link to="/">Home</Link>
-          <Link to="/dashboard">Dashboard</Link>
-          <Link to="/users">Users</Link>
-        </nav>
-
-        <button onClick={onLogOut}>LOG OUT</button>
-      </aside>
-  );
+			<button onClick={handleClick}>LOG OUT</button>
+		</aside>
+	);
 }

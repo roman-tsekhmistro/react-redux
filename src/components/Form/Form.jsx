@@ -1,26 +1,30 @@
 import React from 'react';
-import './Form.scss';
+import './Form.module.scss';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
+import styles from './Form.module.scss';
+import { useDispatch } from 'react-redux';
+import { logIn } from '../../redux/actions/actions';
 
-function LoginForm() {
+export default function LoginForm() {
 	const navigation = useNavigate();
+	const dispatch = useDispatch();
+
 	const SignupSchema = Yup.object().shape({
 		email: Yup.string().email('Invalid email').required('Required'),
 		password: Yup.string().min(5, 'Too Short!').max(20, 'Too Long!').required('Required'),
 	});
 
-	const handleSubmit = () => {
-		const setLocalStorage = window.localStorage;
-		setLocalStorage.setItem('TOKEN', 'Hjak1jasi8');
+	function setToken() {
+		const token = 'hj124iak';
+		localStorage.setItem('TOKEN', token);
+		return token;
+	}
 
-		let TOKEN = localStorage.getItem('TOKEN');
-		if (!TOKEN) {
-			navigation('/login');
-		} else {
-			navigation('/');
-		}
+	const handleSubmit = () => {
+		dispatch(logIn(setToken()));
+		navigation('/');
 	};
 
 	return (
@@ -28,45 +32,44 @@ function LoginForm() {
 			initialValues={{ email: '', password: '', toggle: false }}
 			validationSchema={SignupSchema}
 			onSubmit={handleSubmit}>
-			{({ isSubmitting }) => (
-				<Form className='form__wrapper'>
-					<div className='form__group'>
+			{() => (
+				<Form className={styles.form__wrapper}>
+					<div className={styles.form__group}>
 						<h2>LOGIN</h2>
 						<label htmlFor='email'>Enter email</label>
 						<Field
-							className='form__input'
+							className={styles.form__input}
 							type='email'
 							name='email'
 						/>
 						<ErrorMessage
-							className='form__input--error'
+							className={styles.form__input__error}
 							name='email'
 							component='div'
 						/>
 						<label htmlFor='password'>Enter password</label>
 						<Field
-							className='form__input'
+							className={styles.form__input}
 							type='password'
 							name='password'
 						/>
 						<ErrorMessage
-							className='form__input--error'
+							className={styles.form__input__error}
 							name='password'
 							component='div'
 						/>
 						<label
-							className='form__checkbox--label'
+							className={styles.form__checkbox__label}
 							htmlFor='toggle'>
 							<Field
 								type='checkbox'
 								name='toggle'></Field>
-							<p className='form__checkbox'>Remember me?</p>
+							<p className={styles.form__checkbox}>Remember me?</p>
 						</label>
 					</div>
 					<button
-						className='form__btn'
-						type='submit'
-						disabled={isSubmitting}>
+						className={styles.form__btn}
+						type='submit'>
 						Log In
 					</button>
 				</Form>
@@ -74,5 +77,3 @@ function LoginForm() {
 		</Formik>
 	);
 }
-
-export default LoginForm;

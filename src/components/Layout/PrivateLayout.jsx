@@ -1,11 +1,11 @@
 import Sidebar from '../Sidebar';
-import './PrivateLayout.scss';
+import styles from './PrivateLayout.module.scss';
 
 export default function PrivateLayout(props) {
-  return (
-      <div className="private--layout">
-        <Sidebar/>
-        <div className="app-content">{props.children}</div>
-      </div>
-  );
+	return (
+		<div className={styles.private__layout}>
+			<Sidebar />
+			<div className='app-content'>{props.children}</div>
+		</div>
+	);
 }

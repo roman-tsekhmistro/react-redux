@@ -1,0 +1,71 @@
+.sidebar {
+	height: 100vh;
+	width: 306px;
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+	text-decoration: none;
+	font-size: 42px;
+	color: royalblue;
+	font-family: 'Poppins', sans-serif;
+
+	.logo {
+		height: 39px;
+		width: 100%;
+		transition: transform 0.35s ease-out;
+
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.25);
+		}
+	}
+
+	.navigation {
+		display: flex;
+		flex-direction: column;
+		padding: 0 28px;
+
+		> * {
+			display: flex;
+			align-items: center;
+			padding: 5px 35px;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 21px;
+			letter-spacing: -0.01em;
+			color: #9197b3;
+			margin-bottom: 20px;
+			width: 100%;
+			height: 46px;
+			border-radius: 8px;
+			transition: all 0.3s ease-out;
+
+			&:hover {
+				cursor: pointer;
+				background-color: #5932ea;
+				color: #ffffff;
+			}
+		}
+	}
+
+	button {
+		margin: 0 auto;
+		padding: 10px 70px;
+		font-size: 16px;
+		width: fit-content;
+		border-radius: 40px;
+		background-color: #5932ea;
+		color: #ffff;
+		border: none;
+		transition: background-color 0.3s ease-out;
+
+		&:hover {
+			background-color: #fafbff;
+			color: royalblue;
+			cursor: pointer;
+		}
+	}
+}
