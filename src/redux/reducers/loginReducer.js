@@ -1,16 +1,12 @@
 const initialState = { token: '', isAuth: false };
 
-export default function reducer(state = initialState, action) {
+export default function loginReducer(state = initialState, action) {
 	switch (action.type) {
 		case 'LOGIN':
 			return {
 				...state,
 				isAuth: true,
-			};
-		case 'IS_LOGGED_IN':
-			return {
-				...state,
-				token: localStorage.getItem('TOKEN'),
+				token: action.token,
 			};
 		case 'LOGOUT':
 			return {
@@ -19,6 +15,6 @@ export default function reducer(state = initialState, action) {
 				token: '',
 			};
 		default:
-			console.log('U made mistake');
+			return { state };
 	}
 }

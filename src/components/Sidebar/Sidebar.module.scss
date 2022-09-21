@@ -1,5 +1,7 @@
+@import 'src/assets/styles/variables';
+
 .sidebar {
-	height: 100vh;
+	min-height: 100vh;
 	width: 306px;
 	background-color: #ffffff;
 	display: flex;
@@ -8,8 +10,7 @@
 
 	text-decoration: none;
 	font-size: 42px;
-	color: royalblue;
-	font-family: 'Poppins', sans-serif;
+	color: $sidebar-hover-bg;
 
 	.logo {
 		height: 39px;
@@ -45,7 +46,7 @@
 
 			&:hover {
 				cursor: pointer;
-				background-color: #5932ea;
+				background-color: $sidebar-hover-bg;
 				color: #ffffff;
 			}
 		}
@@ -57,7 +58,7 @@
 		font-size: 16px;
 		width: fit-content;
 		border-radius: 40px;
-		background-color: #5932ea;
+		background-color: $sidebar-hover-bg;
 		color: #ffff;
 		border: none;
 		transition: background-color 0.3s ease-out;

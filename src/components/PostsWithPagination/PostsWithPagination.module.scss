@@ -1,0 +1,30 @@
+@import 'src/assets/styles/variables';
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	width: 270px;
+	font-size: 12px;
+
+	> * {
+		background-color: $pagination-bg-color;
+		height: 26px;
+		width: 26px;
+		&:hover {
+			background-color: #c7c7c7ff;
+			cursor: pointer;
+		}
+	}
+
+	li {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 5px;
+	}
+	.active__page {
+		color: #ffffff;
+		background-color: $sidebar-hover-bg;
+	}
+}

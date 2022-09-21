@@ -1,0 +1,54 @@
+@import 'src/assets/styles/variables';
+
+h3 {
+	margin: 0;
+}
+
+.header {
+	font-size: 20px;
+	font-weight: 700;
+}
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.post {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+	height: 240px;
+	padding: 15px;
+	width: 400px;
+	background-color: $main-bg;
+	border-radius: 30px;
+	margin-bottom: 10px;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: fit-content;
+	width: 100%;
+}
+
+.btn {
+	padding: 10px 15px;
+	width: fit-content;
+	height: fit-content;
+	border-radius: 40px;
+	background-color: $sidebar-hover-bg;
+	color: #ffff;
+	border: none;
+	transition: background-color 0.3s ease-out;
+	text-decoration: none;
+
+	&:hover {
+		background-color: royalblue;
+		color: #fafbff;
+		cursor: pointer;
+	}
+}

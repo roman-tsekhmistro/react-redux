@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import styles from './Form.module.scss';
 import { useDispatch } from 'react-redux';
-import { logIn } from '../../redux/actions/actions';
+import { logIn } from '../../redux/actions/loginActions';
 
 export default function LoginForm() {
 	const navigation = useNavigate();
