@@ -1,6 +1,12 @@
 .statistic {
 	display: flex;
+	justify-content: space-between;
+
+	width: 1400px;
 	height: 151px;
+	background-color: #ffffff;
+	border-radius: 30px;
+	padding: 31px 88px 33px 50px;
 
 	&__block {
 		display: flex;

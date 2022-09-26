@@ -1,0 +1,64 @@
+@import 'src/assets/styles/variables';
+
+.container {
+	position: relative;
+	min-height: 100%;
+	padding: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+	flex-direction: column;
+
+	img {
+		height: 600px;
+		width: 800px;
+		margin-bottom: 15px;
+		border-radius: 50px 50px 50px 50px;
+	}
+
+	header {
+		font-size: 20px;
+		font-weight: 700;
+		margin-bottom: 15px;
+	}
+	.text {
+		width: 750px;
+	}
+
+	.footer {
+		position: absolute;
+		display: flex;
+		width: 50%;
+		justify-content: space-between;
+		bottom: 20px;
+		text-decoration: none;
+
+		> * {
+			text-decoration: none;
+			&:hover {
+				background-color: royalblue;
+			}
+		}
+	}
+
+	.btn {
+		padding: 10px 15px;
+		color: #f8f8f8;
+		background-color: #5932ea;
+		border: none;
+		margin-top: 20px;
+		border-radius: 30px;
+	}
+	.comment__list {
+		width: 80%;
+	}
+}
+
+.spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 400px;
+}

@@ -1,0 +1,10 @@
+.container {
+	width: 100%;
+	margin: 40px 0 0 70px;
+	display: flex;
+	flex-direction: column;
+
+	.heading {
+		margin-bottom: 40px;
+	}
+}

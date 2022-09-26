@@ -5,7 +5,7 @@ export default function PrivateLayout(props) {
 	return (
 		<div className={styles.private__layout}>
 			<Sidebar />
-			<div className='app-content'>{props.children}</div>
+			<div className={styles.content}>{props.children}</div>
 		</div>
 	);
 }

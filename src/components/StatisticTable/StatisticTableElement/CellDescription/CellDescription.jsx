@@ -2,6 +2,7 @@ import styles from './CellDescription.module.scss';
 
 export default function CellDescription(props) {
 	const { img, span, text, classForSpan } = props;
+	const classNames = require('classnames');
 	return (
 		<div className={styles.cell__description}>
 			<img
@@ -9,7 +10,7 @@ export default function CellDescription(props) {
 				alt='icon for arrow'
 			/>
 			<p>
-				<span className={classForSpan}>{span}</span>
+				<span className={classNames(classForSpan === 'green' ? [styles.green] : [styles.red])}>{span}</span>
 				{text}
 			</p>
 		</div>

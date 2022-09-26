@@ -1,0 +1,46 @@
+@import 'src/assets/styles/variables';
+
+.heading {
+	margin-top: 20px;
+}
+
+.comments__list {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+
+	list-style: none;
+}
+
+.list__item {
+	display: flex;
+	flex-direction: column;
+	height: fit-content;
+	width: 100%;
+	padding: 15px;
+	margin: 10px 0;
+	background-color: #ffffff;
+	border-radius: 30px;
+}
+
+.personal__info__wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.name:first-letter,
+.body:first-letter {
+	text-transform: uppercase;
+}
+
+.name {
+	font-weight: 700;
+	font-size: 18px;
+	margin: 0 10px 5px 0;
+}
+
+.email {
+	font-size: 14px;
+	color: #9197b3;
+}
