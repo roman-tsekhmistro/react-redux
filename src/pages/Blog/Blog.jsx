@@ -1,8 +1,9 @@
 import styles from './Blog.module.scss';
-import { useDispatch } from 'react-redux';
+import Post from '../../components/Post';
+import Pagination from '../../components/Pagination';
 import { useEffect } from 'react';
 import { fetchPosts } from '../../redux/thunk/postsThunk';
-import PostsWithPagination from '../../components/PostsWithPagination';
+import { useDispatch } from 'react-redux';
 
 export default function Blog() {
 	const dispatch = useDispatch();
@@ -13,7 +14,9 @@ export default function Blog() {
 
 	return (
 		<main className={styles.container}>
-			<PostsWithPagination itemsPerPage={6} />
+			<h2>Blog</h2>
+			<Post />
+			<Pagination />
 		</main>
 	);
 }

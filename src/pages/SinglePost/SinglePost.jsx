@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchComments, fetchSinglePost } from '../../redux/thunk/singlePostThunk';
+import { fetchComments, fetchSinglePost } from '../../redux/thunk/singlePostThunkAndComments';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import styles from './SinglePost.module.scss';
 import image1 from '../../assets/images/PostRandomImages/wallhaven-4o17g5.jpg';
@@ -14,7 +14,7 @@ import image8 from '../../assets/images/PostRandomImages/wallhaven-lq6xj2.jpg';
 import image9 from '../../assets/images/PostRandomImages/wallhaven-yjqe2x (2).jpg';
 import image10 from '../../assets/images/PostRandomImages/wallhaven-nzvlmy.jpg';
 import { RotatingLines } from 'react-loader-spinner';
-import PostComment from '../../components/PostComment';
+import Comments from '../../components/Comments';
 
 export default function SinglePost() {
 	const { postId } = useParams();
@@ -26,7 +26,7 @@ export default function SinglePost() {
 
 	useEffect(() => {
 		dispatch(fetchSinglePost(postId));
-		dispatch(fetchComments(postId));
+		dispatch(fetchComments());
 	}, [dispatch, postId]);
 
 	const routToPrevPost = () => {
@@ -54,7 +54,7 @@ export default function SinglePost() {
 			<p className={styles.text}>
 				<strong>Text:</strong> {currentPost.body}
 			</p>
-			<PostComment />
+			<Comments />
 			<footer className={styles.footer}>
 				<Link
 					to={`/blog/${routToPrevPost()}`}

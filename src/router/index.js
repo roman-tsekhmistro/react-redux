@@ -6,6 +6,7 @@ import LoginPage from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 import Users from '../pages/Users';
 import SinglePost from '../pages/SinglePost';
+import SingleUser from '../pages/SingleUser';
 
 export default function Router() {
 	return (
@@ -41,16 +42,24 @@ export default function Router() {
 						<PrivateLayout>
 							<SinglePost />
 						</PrivateLayout>
-					}></Route>
+					}
+				/>
 				<Route
 					path='/users'
 					element={
 						<PrivateLayout>
 							<Users />
 						</PrivateLayout>
-					}>
-					{/*  <Route path=":userId" element={<UserSinglePage/>}></Route>*/}
-				</Route>
+					}
+				/>
+				<Route
+					path='/users/:userId'
+					element={
+						<PrivateLayout>
+							<SingleUser />
+						</PrivateLayout>
+					}
+				/>
 			</Routes>
 		</BrowserRouter>
 	);

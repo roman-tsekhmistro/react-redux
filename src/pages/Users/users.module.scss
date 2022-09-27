@@ -1,0 +1,14 @@
+.users {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 15px;
+		grid-row-gap: 45px;
+		list-style: none;
+	}
+}

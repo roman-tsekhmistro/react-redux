@@ -1,0 +1,72 @@
+@import 'src/assets/styles/variables';
+
+.card {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background-color: $main-bg;
+	border-radius: 30px;
+	box-shadow: 0 0 15px -1px rgba(176, 176, 176, 1);
+	width: 290px;
+
+	img {
+		height: 400px;
+		object-fit: cover;
+		border-top-right-radius: 30px;
+		border-top-left-radius: 30px;
+	}
+
+	.info__wrapper {
+		padding: 10px 20px 35px;
+
+		&:hover {
+			cursor: default;
+		}
+
+		.name {
+			font-size: 21px;
+			line-height: 21px;
+			margin-bottom: 7px;
+			margin-left: -5px;
+		}
+
+		.username,
+		.company__name,
+		.email,
+		.phone,
+		.site {
+			color: #9197b3;
+			margin-bottom: 7px;
+		}
+
+		.username {
+			font-size: 16px;
+			margin-left: 5px;
+		}
+		.company__name {
+		}
+	}
+	.btn {
+		position: absolute;
+		text-decoration: none;
+		color: #9197b3;
+		text-align: center;
+		padding: 5px 0;
+		font-size: 18px;
+		line-height: 18px;
+		bottom: 0;
+		width: 100%;
+		height: 30px;
+		border: 1px none #9197b3;
+		border-top-style: dotted;
+		border-bottom-left-radius: 30px;
+		border-bottom-right-radius: 30px;
+		transition: all 0.3s ease-out;
+
+		&:hover {
+			cursor: pointer;
+			background-color: $sidebar-hover-bg;
+			color: #f8f8f8;
+		}
+	}
+}

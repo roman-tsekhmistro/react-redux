@@ -1,6 +1,6 @@
 import { GET_POSTS_ERROR, GET_POSTS_REQUEST, GET_POSTS_SUCCESS } from './actions';
 
-const initialState = { posts: [], post: null, loading: false };
+const initialState = { posts: [], loading: false };
 
 export function postsReducer(state = initialState, action) {
 	switch (action.type) {

@@ -6,7 +6,8 @@ import {
 	getSinglePostRequest,
 	getSinglePostSuccess,
 } from '../singlePost/actions';
-import { getComments, getPost } from '../../api/blog.api';
+import { getPost } from '../../api/blog.api';
+import { getComments } from '../../api/comments.api';
 
 export const fetchSinglePost = id => dispatch => {
 	dispatch(getSinglePostRequest());
@@ -17,10 +18,10 @@ export const fetchSinglePost = id => dispatch => {
 	}
 };
 
-export const fetchComments = id => dispatch => {
+export const fetchComments = () => dispatch => {
 	dispatch(getCommentsRequest());
 	try {
-		getComments(id).then(comments => dispatch(getCommentsSuccess(comments)));
+		getComments().then(comments => dispatch(getCommentsSuccess(comments)));
 	} catch (error) {
 		dispatch(getCommentsFailure(error));
 	}

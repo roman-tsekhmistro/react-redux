@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import styles from '../Sidebar.module.scss';
+import styles from './navItem.module.scss';
 import { Link } from 'react-router-dom';
 
 export default function NavItem({ linkTo, icon, isLogo = false, isActive, text }) {

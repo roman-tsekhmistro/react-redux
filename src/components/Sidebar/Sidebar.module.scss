@@ -15,52 +15,12 @@
 	font-size: 42px;
 	color: $sidebar-hover-bg;
 
-	.logo {
-		height: 39px;
-		transition: transform 0.35s ease-out;
-
-		&:hover {
-			cursor: pointer;
-			transform: scale(1.05);
-		}
-	}
-
 	.navigation {
 		display: flex;
 		flex-direction: column;
 		height: 400px;
+		width: 100%;
 		padding: 0 28px;
-
-		.nav__item {
-			display: flex;
-			align-items: center;
-			padding: 5px 35px;
-			text-decoration: none;
-			font-size: 14px;
-			color: #9197b3;
-			margin-bottom: 20px;
-			height: 46px;
-			width: 110%;
-			border-radius: 8px;
-			transition: all 0.3s ease-out;
-
-			img {
-				height: 24px;
-				width: 24px;
-				margin-right: 10px;
-			}
-
-			&.active,
-			&:hover {
-				cursor: pointer;
-				background-color: $sidebar-hover-bg;
-				color: #ffffff;
-
-				& img {
-					filter: brightness(0) invert(1);
-				}
-			}
-		}
 	}
 
 	button {
