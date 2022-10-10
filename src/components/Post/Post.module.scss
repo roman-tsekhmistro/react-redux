@@ -18,6 +18,10 @@
 	background-color: $main-bg;
 	border-radius: 30px;
 	box-shadow: 0 0 15px -1px rgba(176, 176, 176, 1);
+
+	&:hover {
+		cursor: default;
+	}
 }
 
 .image {

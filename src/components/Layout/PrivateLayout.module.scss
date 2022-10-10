@@ -5,6 +5,8 @@
 	width: calc(100% - $sidebar-width);
 }
 .content {
+	display: flex;
 	margin-left: $sidebar-width;
 	height: 100%;
+	width: 100%;
 }

@@ -7,7 +7,7 @@
 	justify-content: space-around;
 	height: 100%;
 	position: fixed;
-	z-index: 111;
+	z-index: 1;
 	width: $sidebar-width;
 	background-color: #ffffff;
 
@@ -38,6 +38,17 @@
 			background-color: #fafbff;
 			color: royalblue;
 			cursor: pointer;
+		}
+	}
+
+	.logo {
+		height: 39px;
+		width: 100%;
+		transition: transform 0.35s ease-out;
+
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.05);
 		}
 	}
 }

@@ -6,6 +6,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+
 	h3 {
 		margin: 0;
 	}
@@ -13,6 +15,7 @@
 	.user__wrapper {
 		display: flex;
 		width: 100%;
+		height: 100%;
 		justify-content: space-evenly;
 		padding-top: 40px;
 	}
@@ -23,6 +26,12 @@
 		padding: 15px 20px;
 		font-size: 18px;
 		margin: 0;
+
+		> * {
+			margin-bottom: 10px;
+			width: fit-content;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+		}
 	}
 
 	.user__bio {
@@ -43,10 +52,11 @@
 	}
 
 	.btn {
+		position: absolute;
+		bottom: 0;
 		text-decoration: none;
 		padding: 10px 70px;
 		margin-bottom: 20px;
-		font-size: 16px;
 		width: fit-content;
 		border-radius: 40px;
 		background-color: $sidebar-hover-bg;
@@ -59,5 +69,13 @@
 			color: royalblue;
 			cursor: pointer;
 		}
+	}
+
+	.comments__wrapper {
+		width: 1440px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 }

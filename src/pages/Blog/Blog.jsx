@@ -2,7 +2,7 @@ import styles from './Blog.module.scss';
 import Post from '../../components/Post';
 import Pagination from '../../components/Pagination';
 import { useEffect } from 'react';
-import { fetchPosts } from '../../redux/thunk/postsThunk';
+import { fetchPosts } from '../../redux/thunk/posts';
 import { useDispatch } from 'react-redux';
 
 export default function Blog() {

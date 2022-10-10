@@ -1,5 +1,5 @@
 import styles from './pagination.module.scss';
-import { fetchPosts } from '../../redux/thunk/postsThunk';
+import { fetchPosts } from '../../redux/thunk/posts';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 

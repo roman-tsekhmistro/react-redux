@@ -5,9 +5,10 @@ import {
 	getSinglePostError,
 	getSinglePostRequest,
 	getSinglePostSuccess,
+	removeCommentFromList,
 } from '../singlePost/actions';
 import { getPost } from '../../api/blog.api';
-import { getComments } from '../../api/comments.api';
+import { getCommentsForPost } from '../../api/comments.api';
 
 export const fetchSinglePost = id => dispatch => {
 	dispatch(getSinglePostRequest());
@@ -18,10 +19,19 @@ export const fetchSinglePost = id => dispatch => {
 	}
 };
 
-export const fetchComments = () => dispatch => {
+export const fetchComments = id => dispatch => {
 	dispatch(getCommentsRequest());
 	try {
-		getComments().then(comments => dispatch(getCommentsSuccess(comments)));
+		getCommentsForPost(id).then(comments => dispatch(getCommentsSuccess(comments)));
+	} catch (error) {
+		dispatch(getCommentsFailure(error));
+	}
+};
+
+export const fetchCommentsAfterDelete = parentId => dispatch => {
+	dispatch(getCommentsRequest());
+	try {
+		getCommentsForPost().then(comments => dispatch(removeCommentFromList(comments, parentId)));
 	} catch (error) {
 		dispatch(getCommentsFailure(error));
 	}

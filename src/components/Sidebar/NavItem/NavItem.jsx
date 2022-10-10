@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 export default function NavItem({ linkTo, icon, isLogo = false, isActive, text }) {
 	return (
 		<Link
-			className={classNames(styles.nav__item, { [styles.active]: isActive }, { [styles.logo]: isLogo })}
+			className={classNames(styles.nav__item, { [styles.active]: isActive })}
 			to={linkTo}>
 			<img
+				className={classNames(styles.nav__item__icon, { [styles.logo]: isLogo })}
 				src={icon}
-				alt=''
+				alt='Nav item pict'
 			/>
 			{text}
 		</Link>

@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchComments, fetchSingleUser } from '../../redux/thunk/usersThunk';
+import { fetchComments, fetchSingleUser } from '../../redux/thunk/users';
 import Comments from '../../components/Comments';
 import styles from './singleUser.module.scss';
 import man1 from '../../assets/images/UsersPhoto/man1.jpg';
@@ -14,6 +14,7 @@ import woman2 from '../../assets/images/UsersPhoto/woman2.jpg';
 import woman3 from '../../assets/images/UsersPhoto/woman3.jpg';
 import woman4 from '../../assets/images/UsersPhoto/woman4.jpg';
 import woman5 from '../../assets/images/UsersPhoto/woman5.jpg';
+import { Field, FieldArray, Form, Formik } from 'formik';
 
 export default function SingleUser() {
 	const { userId } = useParams();
@@ -24,7 +25,6 @@ export default function SingleUser() {
 
 	useEffect(() => {
 		dispatch(fetchSingleUser(userId));
-		dispatch(fetchComments(userId));
 	}, [dispatch, userId]);
 
 	return currentUser ? (
@@ -79,7 +79,6 @@ export default function SingleUser() {
 					className={styles.user__img}
 				/>
 			</div>
-			<Comments />
 			<Link
 				className={styles.btn}
 				to={'/users'}>

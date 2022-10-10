@@ -7,6 +7,7 @@ import Dashboard from '../pages/Dashboard';
 import Users from '../pages/Users';
 import SinglePost from '../pages/SinglePost';
 import SingleUser from '../pages/SingleUser';
+import { Albums } from '../pages/Albums/Albums';
 
 export default function Router() {
 	return (
@@ -57,6 +58,14 @@ export default function Router() {
 					element={
 						<PrivateLayout>
 							<SingleUser />
+						</PrivateLayout>
+					}
+				/>
+				<Route
+					path='/albums'
+					element={
+						<PrivateLayout>
+							<Albums />
 						</PrivateLayout>
 					}
 				/>

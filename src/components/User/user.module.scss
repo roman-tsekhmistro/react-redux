@@ -8,6 +8,12 @@
 	border-radius: 30px;
 	box-shadow: 0 0 15px -1px rgba(176, 176, 176, 1);
 	width: 290px;
+	transition: transform 0.3s ease-in;
+
+	&:hover {
+		object-fit: cover;
+		transform: scale(1.05);
+	}
 
 	img {
 		height: 400px;

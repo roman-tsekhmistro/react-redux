@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchComments, fetchSinglePost } from '../../redux/thunk/singlePostThunkAndComments';
+import { useEffect, useState } from 'react';
+import { fetchComments, fetchSinglePost } from '../../redux/thunk/singlePostAndComments';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import styles from './SinglePost.module.scss';
 import image1 from '../../assets/images/PostRandomImages/wallhaven-4o17g5.jpg';
@@ -23,24 +23,22 @@ export default function SinglePost() {
 	const dispatch = useDispatch();
 	const arrWithImagesForHeader = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10];
 	const randomImageForHeader = arrWithImagesForHeader[Math.floor(Math.random() * arrWithImagesForHeader.length)];
+	const [prevBtnState, setPrevBtnState] = useState(false);
+	const [nextBtnState, setNextBtnState] = useState(false);
 
 	useEffect(() => {
 		dispatch(fetchSinglePost(postId));
-		dispatch(fetchComments());
+		dispatch(fetchComments(postId));
+		+postId === 1 ? setPrevBtnState(true) : setPrevBtnState(false);
+		+postId === 50 ? setNextBtnState(true) : setNextBtnState(false);
 	}, [dispatch, postId]);
 
 	const routToPrevPost = () => {
-		if (+postId === 0) {
-			navigate('/blog');
-		}
-		return +postId - 1;
+		return navigate(`/blog/${+postId - 1}`);
 	};
 
 	const routToNextPost = () => {
-		if (+postId === 50) {
-			navigate('/blog');
-		}
-		return +postId + 1;
+		return navigate(`/blog/${+postId + 1}`);
 	};
 
 	return currentPost ? (
@@ -56,21 +54,23 @@ export default function SinglePost() {
 			</p>
 			<Comments />
 			<footer className={styles.footer}>
-				<Link
-					to={`/blog/${routToPrevPost()}`}
-					className={styles.btn}>
+				<button
+					className={styles.btn}
+					onClick={routToPrevPost}
+					disabled={prevBtnState}>
 					Prev
-				</Link>
+				</button>
 				<Link
 					to='/blog'
 					className={styles.btn}>
 					Back to all posts
 				</Link>
-				<Link
-					to={`/blog/${routToNextPost()}`}
-					className={styles.btn}>
+				<button
+					className={styles.btn}
+					onClick={routToNextPost}
+					disabled={nextBtnState}>
 					Next
-				</Link>
+				</button>
 			</footer>
 		</div>
 	) : (
