@@ -1,0 +1,45 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: fit-content;
+	list-style: none;
+	padding: 20px 30px 30px;
+
+	h2,
+	ul {
+		margin: 0;
+	}
+
+	h2 {
+		margin-bottom: 25px;
+	}
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 25px;
+		width: 100%;
+		justify-content: space-around;
+		margin-bottom: 40px;
+	}
+
+	.btn {
+		background-color: #5932ea;
+		color: #fff;
+		padding: 10px 15px;
+		border-radius: 15px;
+		border: none;
+		text-decoration: none;
+		transition: all 0.1s linear;
+		font-size: 20px;
+
+		&:hover {
+			background-color: rgba(169, 169, 169, 0.35);
+			text-decoration: underline;
+			cursor: pointer;
+			color: #5932ea;
+		}
+	}
+}

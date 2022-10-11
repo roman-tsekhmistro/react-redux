@@ -9,7 +9,7 @@ import {
 	GET_SINGLE_POST_SUCCESS,
 } from './actions';
 
-const initialValue = { post: null, comments: [], loading: false, commentLoading: false };
+const initialValue = { post: null, loading: false, comments: [], commentLoading: false };
 
 export function singlePostReducer(state = initialValue, action) {
 	switch (action.type) {

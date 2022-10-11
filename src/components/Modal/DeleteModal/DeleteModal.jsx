@@ -2,12 +2,26 @@ import styles from './deleteModal.module.scss';
 import classNames from 'classnames';
 import { useDispatch } from 'react-redux';
 import { fetchCommentsAfterDelete } from '../../../redux/thunk/singlePostAndComments';
+import { fetchPhotosAfterDelete } from '../../../redux/thunk/albums';
 
-export default function DeleteModal({ active, setActive, parentId }) {
+export default function DeleteModal({ active, setActive, commentId, photoId }) {
 	const dispatch = useDispatch();
 
+	const whereModalUsed = () => {
+		if (photoId !== undefined) {
+			removePhoto();
+		}
+		if (commentId !== undefined) {
+			removeComment();
+		}
+	};
+
 	const removeComment = () => {
-		dispatch(fetchCommentsAfterDelete(parentId));
+		dispatch(fetchCommentsAfterDelete(commentId));
+	};
+
+	const removePhoto = () => {
+		dispatch(fetchPhotosAfterDelete(photoId));
 	};
 
 	return (
@@ -28,7 +42,7 @@ export default function DeleteModal({ active, setActive, parentId }) {
 				<footer>
 					<button
 						className={classNames(styles.btn, styles.btn__confirm)}
-						onClick={removeComment}>
+						onClick={whereModalUsed}>
 						YES
 					</button>
 					<button className={classNames(styles.btn, styles.btn__cancel)}>NO</button>

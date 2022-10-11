@@ -8,6 +8,7 @@ import Users from '../pages/Users';
 import SinglePost from '../pages/SinglePost';
 import SingleUser from '../pages/SingleUser';
 import { Albums } from '../pages/Albums/Albums';
+import SingleAlbum from '../pages/SingleAlbum/SingleAlbum';
 
 export default function Router() {
 	return (
@@ -66,6 +67,14 @@ export default function Router() {
 					element={
 						<PrivateLayout>
 							<Albums />
+						</PrivateLayout>
+					}
+				/>
+				<Route
+					path='/albums/:albumId'
+					element={
+						<PrivateLayout>
+							<SingleAlbum />
 						</PrivateLayout>
 					}
 				/>

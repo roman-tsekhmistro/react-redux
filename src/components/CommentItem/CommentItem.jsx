@@ -27,7 +27,7 @@ export default function CommentItem({ name, email, body, id }) {
 			<DeleteModal
 				active={deleteModalActive}
 				setActive={setDeleteModalActive}
-				parentId={id}
+				commentId={id}
 			/>
 		</li>
 	);
