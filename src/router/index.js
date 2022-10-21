@@ -9,6 +9,7 @@ import SinglePost from '../pages/SinglePost';
 import SingleUser from '../pages/SingleUser';
 import { Albums } from '../pages/Albums/Albums';
 import SingleAlbum from '../pages/SingleAlbum/SingleAlbum';
+import Todo from '../pages/Todo';
 
 export default function Router() {
 	return (
@@ -78,6 +79,13 @@ export default function Router() {
 						</PrivateLayout>
 					}
 				/>
+				<Route
+					path='/todo'
+					element={
+						<PrivateLayout>
+							<Todo></Todo>
+						</PrivateLayout>
+					}></Route>
 			</Routes>
 		</BrowserRouter>
 	);

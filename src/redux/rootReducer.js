@@ -4,6 +4,7 @@ import { postsReducer } from './posts/reducer';
 import loginReducer from './login/reducer';
 import usersReducer from './users/reducer';
 import { albumsReducer } from './albums/reducer';
+import { toDoReducer } from './toDo/reducer';
 
 export const rootReducer = combineReducers({
 	singlePostReducer,
@@ -11,4 +12,5 @@ export const rootReducer = combineReducers({
 	loginReducer,
 	usersReducer,
 	albumsReducer,
+	toDoReducer,
 });

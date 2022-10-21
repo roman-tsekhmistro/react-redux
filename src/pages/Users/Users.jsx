@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './users.module.scss';
 import { useEffect } from 'react';
 import { fetchUsers } from '../../redux/thunk/users';
-import User from '../../components/User';
+import User from '../../components/common/User';
 
 export default function Users() {
 	const dispatch = useDispatch();

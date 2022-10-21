@@ -1,0 +1,77 @@
+@import '../../assets/styles/modal.module';
+
+.modal {
+	@include modal;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px;
+		border-radius: 30px;
+		background-color: #f8f8f8;
+		text-align: left;
+		height: 200px;
+		width: 300px;
+		position: relative;
+
+		header,
+		h2,
+		p,
+		footer {
+			margin: 0;
+		}
+
+		h2 {
+			font-size: 21px;
+		}
+
+		p {
+			font-size: 18px;
+			font-weight: 700;
+			text-align: center;
+		}
+		footer {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.btn {
+			padding: 10px 15px;
+			border-radius: 15px;
+			border: none;
+
+			transition: all 0.2s;
+
+			&__confirm {
+				background-color: #5932ea;
+				color: #fff;
+
+				&:hover {
+					cursor: pointer;
+					color: #5932ea;
+					background-color: rgba(89, 50, 234, 0.2);
+				}
+			}
+
+			&__cancel {
+				color: #5932ea;
+				background-color: rgba(255, 255, 255, 0);
+
+				&:hover {
+					cursor: pointer;
+					color: #fff;
+					background-color: rgba(89, 50, 234, 0.75);
+				}
+			}
+		}
+	}
+}
+
+.active {
+	@include active;
+}
+
+.close__modal {
+	@include close-modal;
+}

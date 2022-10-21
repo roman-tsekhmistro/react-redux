@@ -1,4 +1,5 @@
 @import 'src/assets/styles/variables';
+@import 'src/assets/styles/main';
 
 .container {
 	display: flex;
@@ -23,24 +24,6 @@
 		padding: 0 28px;
 	}
 
-	button {
-		margin: 0 auto;
-		padding: 10px 70px;
-		font-size: 16px;
-		width: fit-content;
-		border-radius: 40px;
-		background-color: $sidebar-hover-bg;
-		color: #ffff;
-		border: none;
-		transition: background-color 0.3s ease-out;
-
-		&:hover {
-			background-color: #fafbff;
-			color: royalblue;
-			cursor: pointer;
-		}
-	}
-
 	.logo {
 		height: 39px;
 		width: 100%;
@@ -50,5 +33,9 @@
 			cursor: pointer;
 			transform: scale(1.05);
 		}
+	}
+
+	.btn {
+		@include btn;
 	}
 }

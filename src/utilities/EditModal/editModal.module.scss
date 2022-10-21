@@ -1,0 +1,57 @@
+@import '../../assets/styles/modal.module';
+
+h2 {
+	margin: 0;
+}
+
+.modal {
+	@include modal;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		width: 400px;
+		min-height: 200px;
+		padding: 20px 20px 0;
+		border-radius: 30px;
+		position: relative;
+		background-color: #f8f8f8;
+	}
+}
+
+.input {
+	padding: 5px 10px;
+	border-radius: 15px;
+	border: 2px solid #5932ea;
+}
+
+.close__modal {
+	@include close-modal;
+}
+
+.active {
+	@include active;
+}
+
+.btn {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	margin-top: 15px;
+	border: none;
+	background-color: #5932ea;
+	color: white;
+	padding: 7px 0;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	transition: background-color 0.2s ease-in;
+
+	&:hover {
+		font-weight: 700;
+		cursor: pointer;
+		color: #5932ea;
+		background-color: #ffffff;
+	}
+}

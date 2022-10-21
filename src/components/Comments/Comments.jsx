@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import styles from './comments.module.scss';
 import { useState } from 'react';
-import Modal from '../Modal';
-import CommentItem from '../CommentItem/CommentItem';
+import Modal from '../../utilities/Modal';
+import CommentItem from '../common/CommentItem/CommentItem';
 
 export default function Comments() {
 	const comments = useSelector(state => state.singlePostReducer.comments);

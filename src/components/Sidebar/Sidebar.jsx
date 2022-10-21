@@ -7,13 +7,15 @@ import HomeIcon from '../../assets/images/Sidebar/dashboard-icon.svg';
 import UsersIcon from '../../assets/images/Sidebar/users-icon.svg';
 import DashboardIcon from '../../assets/images/Sidebar/dashboard-icon.svg';
 import GalleryIcon from '../../assets/images/Sidebar/gallery-icon.png';
-import NavItem from './NavItem/NavItem';
+import TodoIcon from '../../assets/images/Sidebar/todo-icon.png';
+import NavItem from '../common/NavItem/NavItem';
 
 const DASHBOARD_ROUTE = '/';
 const BLOG_ROUTE = '/blog';
 const LOGIN_ROUTE = '/login';
 const USERS_ROUTE = '/users';
 const ALBUMS_ROUTE = '/albums';
+const TODO_ROUTE = '/todo';
 
 export default function Sidebar() {
 	const navigation = useNavigate();
@@ -56,9 +58,19 @@ export default function Sidebar() {
 					text='Albums'
 					isActive={pathname === ALBUMS_ROUTE}
 				/>
+				<NavItem
+					linkTo={TODO_ROUTE}
+					icon={TodoIcon}
+					text='To Do'
+					isActive={pathname === TODO_ROUTE}
+				/>
 			</nav>
 
-			<button onClick={handleClickForLogOutBtn}>LOG OUT</button>
+			<a
+				className={styles.btn}
+				onClick={handleClickForLogOutBtn}>
+				LOG OUT
+			</a>
 		</aside>
 	);
 }

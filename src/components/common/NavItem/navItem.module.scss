@@ -1,0 +1,43 @@
+@import '../../../assets/styles/variables';
+
+.nav__item {
+	display: flex;
+	align-items: center;
+	padding: 5px 35px;
+	text-decoration: none;
+	font-size: 14px;
+	color: #9197b3;
+	margin-bottom: 20px;
+
+	height: 46px;
+	border-radius: 8px;
+	transition: all 0.3s ease-out;
+
+	&.active,
+	&:hover {
+		cursor: pointer;
+		background-color: $sidebar-hover-bg;
+		color: #ffffff;
+
+		& img {
+			filter: brightness(0) invert(1);
+		}
+	}
+
+	&__icon {
+		margin-right: 10px;
+		height: 24px;
+		width: 24px;
+	}
+
+	.logo {
+		height: 39px;
+		width: 100%;
+		transition: transform 0.35s ease-out;
+
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.05);
+		}
+	}
+}

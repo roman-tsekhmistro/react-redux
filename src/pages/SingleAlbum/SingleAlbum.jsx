@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { fetchPhotosForTheAlbumId } from '../../redux/thunk/albums';
-import AlbumPhoto from '../../components/AlbumPhoto';
+import AlbumPhoto from '../../components/common/AlbumPhoto';
 import styles from './SingleAlbum.module.scss';
 
 export default function SingleAlbum() {

@@ -5,3 +5,22 @@
 body {
 	font-family: 'Poppins', sans-serif;
 }
+
+@mixin btn {
+	padding: 10px 0;
+	font-size: 16px;
+	width: 150px;
+	text-align: center;
+	border-radius: 40px;
+	background-color: $sidebar-hover-bg;
+	color: #ffff;
+	border: none;
+	transition: background-color 0.3s ease-out;
+	text-decoration: none;
+
+	&:hover {
+		background-color: #fafbff;
+		color: royalblue;
+		cursor: pointer;
+	}
+}

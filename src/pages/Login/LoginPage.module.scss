@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 }
 
-.login__page__wrapper {
+.login__page {
 	height: 100vh;
 	width: 100vw;
 	display: flex;
@@ -12,7 +12,7 @@
 		object-fit: cover;
 	}
 
-	.login__form__wrapper {
+	.login__form {
 		display: flex;
 		width: 30vw;
 		justify-content: center;

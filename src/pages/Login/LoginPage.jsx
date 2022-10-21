@@ -5,12 +5,12 @@ import styles from './LoginPage.module.scss';
 
 export default function LoginPage() {
 	return (
-		<div className={styles.login__page__wrapper}>
+		<div className={styles.login__page}>
 			<img
 				className={styles.bg__image}
 				src={LoginPageImage}
 				alt='Background'></img>
-			<div className={styles.login__form__wrapper}>
+			<div className={styles.login__form}>
 				<LoginForm />
 			</div>
 		</div>

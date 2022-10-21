@@ -1,4 +1,4 @@
-import Album from '../../components/Album';
+import Album from '../../components/common/Album';
 import { fetchAlbums } from '../../redux/thunk/albums';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
